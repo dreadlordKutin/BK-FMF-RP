@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{url}
 \usepackage{booktabs}
@@ -14,7 +15,7 @@
 \theoremstyle{plain}
 \newtheorem{izrek}{Izrek}
 
-
+\newcommand{\m}{\mathcal{M}_2}
 
 
 
@@ -75,8 +76,7 @@ Prirejeno po:
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
 \end{definicija}
 
-Primer magičnega kvadrata reda 3 je prikazan v tabeli ??. % sklic: table:mag3
-
+Primer magičnega kvadrata reda 3 je prikazan v tabeli \ref{table:mag3}. % sklic: table:mag3
 % - napis nad tabelo: Magični kvadrat reda 3
 % - oznaka: table:mag3
 % Začetek magičnega kvadrata
@@ -98,12 +98,13 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ??. % sklic: table:mag3
 \begin{definicija}
    Magični kvadrat reda \(n\) je \emph{normalen}, če v njem nastopajo števila
    \begin{equation}
+      \label{eq:numbers}
       % oznaka: eq:numbers
       1, 2, 3, \ldots, n^2-1, n^2.
    \end{equation}
 \end{definicija}
 
-Magični kvadrat v tabeli ?? je normalen.
+Magični kvadrat v tabeli \ref{table:mag3} je normalen.
 To je tudi najmanjši netrivialen normalen magični kvadrat.
 Poleg normalnih magičnih kvadratov so zanimivi tudi magični kvadrati praštevil. % sklic: table:mag3
 
@@ -137,7 +138,7 @@ obliki magičnega kvadrata reda 3. Ta je v bistvu enak kot kvadrat
 Lo Shu, vendar je vsako število povečano za 19.
 
 Z magičnimi kvadrati so se ukvarjali tudi najbolj znani matematiki kot na
-primer Euler, glej~\cite{bessy}. % ključ: euler
+primer Euler, glej~\cite{euler}. % ključ: euler
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -178,35 +179,34 @@ in zato kvadrat ni normalen.
 \end{definicija}
 
 \begin{izrek}
-	Začetek okolja izrek
-   Magična konstanta normalnega magičnega kvadrata reda !!
-   je enaka
+   Magična konstanta normalnega magičnega kvadrata reda n je enaka
    \begin{equation}
+      \label{eq:mc}
       % oznaka: eq:mc
       % Okolje `equation` je že prikazni matematični način,
       % zato tu izraz vpišite brez `\[` in `\]`.
-      !!
+      \m(n) = \frac{1}{2}n(n^2 + 1).
    \end{equation}
 \end{izrek}
 
 \begin{proof}
 	% Začetek dokaza
    V normalnem magičnem kvadratu reda \(n\) je vsota vseh nastopajočih
-   števil (glej ?? na strani ??) enaka
-   !!. Ker imamo
+   števil (glej \eqref{eq:numbers} na strani \pageref{eq:numbers}) enaka
+   $1 + 2 + 3 + \dots + n^2 = \sum_{k=1}^{n^2}k = \frac{1}{2}n^2(n^2 + 1)$. Ker imamo
    v kvadratu \(n\) vrstic z enako vsoto, je vsota števil v eni vrstici
-   enaka številu \(M_2(n)\). % sklica: eq:numbers, eq:numbers
+   enaka številu \(\m(n)\). % sklica: eq:numbers, eq:numbers
 % Konec dokaza
 \end{proof}
 
-Preprost račun pokaže, da je konstanti ?? analogna konstanta
-\(M_2(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
+Preprost račun pokaže, da je konstanti \eqref{eq:mc} analogna konstanta
+\(\m(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
 \(A\), \(A+D\), \(A+2D\), \ldots, \(A+(n^2-1)D\), enaka % sklic: eq:mc
-!!
+\[\m(n;A,D)=\frac{1}{2}n \left(2A + D(n^2-1)\right)\]
 
 \begin{definicija}
       Če vsako od števil v normalnem magičnem kvadratu reda \(n\) odštejemo
-      od števila !!, dobimo nov magični kvadrat, ki je prvotnemu
+      od števila $n^2 + 1$, dobimo nov magični kvadrat, ki je prvotnemu
       \emph{komplementaren}.
 \end{definicija}
 
@@ -215,7 +215,7 @@ Preprost račun pokaže, da je konstanti ?? analogna konstanta
       iz drugega s pomočjo zasukov oziroma zrcaljenj.
 \end{definicija}
 
-Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli ??.
+Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli \ref{table:stevila}.
 % sklic: table:stevila
 
 % - napis nad tabelo: Število različnih normalnih magičnih kvadratov
